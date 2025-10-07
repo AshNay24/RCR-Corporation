@@ -1832,13 +1832,13 @@ a.fg-light:hover, a.fg-light:focus {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, auto));
   gap: 30px;
   width: 100%;
 }
 
 .grid-item {
-  width: 100%;
+  width: 100vh;
 }
 
 
