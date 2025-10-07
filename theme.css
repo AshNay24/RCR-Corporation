@@ -1830,6 +1830,19 @@ a.fg-light:hover, a.fg-light:focus {
   text-decoration: none;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.grid-item {
+  width: 100%;
+}
+
+
+
 .portfolio {
   display: block;
   background-color: #F2F4FE;
