@@ -59,9 +59,11 @@
     .project-image {
       width: 100%;
       border-radius: 8px;
+      justify-content: center;
       box-shadow: 0 4px 12px rgb(215, 217, 224);
       margin-bottom: 20px;
     }
+    
   </style>
 </head>
 <body>
@@ -90,20 +92,32 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a href="index.html" class="navbar-brand">Ashli <span class="text-primary">Pineda.</span></a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent">
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
-            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">Sobre mi</a></li>
-            <!--<li class="nav-item"><a href="services.html" class="nav-link">Certificados</a></li>-->
-            <li class="nav-item active"><a href="projects.html" class="nav-link">Proyectos</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contactame</a></li>
+            <li class="nav-item ">
+              <a href="index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">Sobre mi</a>
+            </li>
+            <li class="nav-item active">
+              <a href="#" class="nav-link">Proyectos</a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contactame</a>
+            </li>
           </ul>
+          
         </div>
-      </div>
-    </nav>
+      </div> <!-- .container -->
+    </nav> <!-- .navbar -->
+
 
     <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(./img/bg_image_1.jpg);">
       <div class="container h-100">
@@ -156,192 +170,78 @@
   <script>
     // Base de datos de proyectos
     const projects = {
-      "apprendre": {
-        title: "Aprende Jugando",
-        year: "2018",
-        type: "Proyecto Educativo",
-        software: "Visual Studio IDE, Figma, Photoshop",
-        objective: "Desarrollar un juego educativo para niños de tres a cinco años que facilite el aprendizaje de números, colores, letras y figuras.",
-        description: "El proyecto fue desarrollado mediante un proceso iterativo que incluyó diseño de interfaz, desarrollo de funcionalidades educativas y pruebas de usabilidad con el público objetivo.",
-        role: "Responsable del diseño toda la interfaz de usuario, desarrollo de las actividades educativas y implementación de la aplicación utilizando tecnologías web.",
-        languages: "C#",
+      "snbx": {
+        title: "Summit 2025 (snbx)",
         objectives: [
-          "Desarrollar una interfaz intuitiva que facilite a los niños la interacción con el contenido educativo.",
+          "Usando Adobe Photoshop pude redimencionar cada fotografia y mejolarle la calidad",
           "Fomentar el aprendizaje a través de actividades lúdicas y atractivas.",
           "Asegurar que la aplicación sea completamente responsive para una experiencia óptima en diferentes dispositivos.",
           "Implementar un sistema de progreso que motive a los niños a completar las actividades."
         ],
-        image: "./img/portfolio/progra1.jpeg",
-        colors: [
-          { name: "#faf5f5", value: "#faf5f5" },
-          { name: "#6383eb", value: "#6383eb" },
-        ],
-        components: [
-          "Botones interactivos - Para navegación y selección de actividades",
-          "Elementos arrastrables - Para actividades de asociación",
-          "Animaciones - Para hacer la experiencia más atractiva",
-          "Sistema de recompensas - Para motivar el progreso"
-        ]
+        image: "./img/portfolio/snbx1.png",
+        img1: "./img/portfolio/snbx.png",
+       
+    
       },
-      "science": {
-        title: "El Mundo de las Ciencias",
-        year: "2018",
-        type: "Proyecto Educativo",
-        software: "Visual Sudio IDE, Balsamiq, Figma, Photoshop ",
-        objective: "Crear una aplicación educativa para estudiantes de segundo ciclo que facilite el aprendizaje de ciencias, animales, plantas y el cuerpo humano.",
-        description: "Desarrollo de una plataforma interactiva y simulaciones para un aprendizaje inmersivo.",
-        role: "Diseñadora principal creando todas las interfaces de usuario.",
-        languages: "C#",
+      "bespoke": {
+        title: "Bespoke",
         objectives: [
           "Crear contenido científico accesible y atractivo para estudiantes",
           "Implementar simulaciones interactivas de procesos naturales",
           "Desarrollar un sistema de evaluación integrado",
           "Garantizar la compatibilidad multiplataforma"
         ],
-        image: "./img/portfolio/progra2.jpeg",
-        colors: [
-          { name: "#209450", value: "#209450" },
-          { name: "#58baf3", value: "#58baf3" },
-          { name: "#f7f9fa", value: "#f7f9fa" }
-        ],
-        components: [
-          "Interfaces interactivas - Para visualización científica",
-          "Simulaciones - Para experimentos virtuales",
-          "Sistema de quizzes - Para evaluación del aprendizaje",
-          "Panel de progreso - Para seguimiento del estudiante",
-          "Creacion de botones y navegacion"
-        ]
+        image: "./img/portfolio/Bespoke.png",
+        img1: "./img/portfolio/Bespoke1.png",
+        
       },
-      "agua": {
-        title: "Agua a tu Alcance",
-        year: "2019",
-        type: "Proyecto Educativo",
-        software: "Android Studio, Balsamiq ",
-        objective: "Una app-mobile para gestionar el consumo de agua",
-        description: "Desarrollo de una plataforma interactiva  la cual pdiamos registra el consumo de agua potable en nuestro hogas y asi poder generar una factra de cobro",
-        role: "Diseñadora creando la interfas del usuario ",
-        languages: "Java",
+      "ara": {
+        title: "Ara Constructores",
         objectives: [
           "Crear una plataforma facil e intuitva para los usuarios",
           "Implementar registro de consumo de agua en el hogar",
           "Desarrollar un sistema que crea una factura para cobro"
         ],
-        image: "./img/portfolio/progra3.jpeg",
-        colors: [
-          { name: "#faf5f5", value: "#faf5f5" },
-          { name: "#58baf3", value: "#58baf3" },
-        ],
-        components: [
-          "Panel de progreso - Para seguimiento",
-          "Pantallas de registro del usuario",
-          "Pantalla pricnipal de control de consumo de agua",
-          "Botones, menu, y barra de busqueda"
-        ]
-      }
-      ,
-      "huellitas": {
-        title: "Huellitas al Rescate",
-        year: "2020",
-        type: "Proyecto Educativo",
-        software: "Visual Studio Code, Balsamiq, Figma ",
-        objective: "Una app-web en la que se realizaba adpciones de animales y cuenta con una guia de cuidado de mascotas",
-        description: "Buscar animales en adopción y realizar donaciones",
-        role: "Diseñadora principal ",
-        languages: "JavaScript, CSS3, HTML, PHP",
-        objectives: [
-          "Que las personas pudieran adoptar o dar en adpcion perritos y gatos",
-          "Que se pudieran realizar donaciones",
-          "Que encuentren una guia de cuidados de mascotas",
-          "Voluntariado"
-        ],
-        image: "./img/portfolio/progra4.jpeg",
-        colors: [
-          { name: "#faf5f5", value: "#faf5f5" },
-          { name: "#f79743", value: "#f79743" },
-          { name: "#3243e0", value: "#3243e0" },
-        ],
-        components: [
-          "Botones interactivos - Para navegación y selección de actividades",
-          "Seccion para subir imagenes de animales",
-          "Animaciones - Para hacer la experiencia más atractiva"
-        ]
+        image: "./img/portfolio/araconstructo.png",
+        img1: "./img/portfolio/araconstructo1.png",
       }
        ,
-      "boutique": {
-        title: "Escandalo Boutique",
-        year: "2019",
-        type: "Proyecto Educativo",
-        software: "Visual Studio Code, Balsamiq, Figma, Photoshop ",
-        objective: "Un software de inventariado para una boutique",
-        description: "Un sowtfware de inventario y venta para una tienda de ropa (boutique), donde la dueña pudiera tener un orden de su producto, proveedores y empleados",
-        role: "Diseñadora principal ",
-        languages: "HTML, CSS3, JavaScript, MySQLServer",
+      "her": {
+        title: "Her",        
         objectives: [
             "Inventariado y ventas",
             "Registro de empreados",
             "Registro de proveedores"
         ],
         image: "./img/portfolio/software.jpeg",
-        colors: [
-          { name: "#faf5f5", value: "#faf5f5" },
-          { name: "#bb4747", value: "#bb4747" },
-          { name: "#29a76a", value: "#29a76a" },
+        img1: "./img/portfolio/software.jpeg",
 
-        ],
-        components: [
-          "Botones interactivos - Para navegación",
-          "Pantallas de registros, para prdutos, ventas, proveedores y empleados"
-        ]
       }
       ,
-      "snbx": {
-        title: "Summit 2025 (SNBX)",
-        year: "2025",
+      "snbx26": {
+        title: "Summit 2026 (Snbx)",
         type: "Sitio Informativo",
-        software: "Illustrator, Photoshop ",
-        objective: "",
-        description: "Desarrollo de una plataforma interactiva  la cual nos decía cada cuanto teníamos que tomar agua",
-        role: "Diseñadora principal ",
-        languages: "Java",
         objectives: [
           "Crear contenido científico accesible y atractivo para estudiantes",
           "Implementar simulaciones interactivas de procesos naturales",
           "Desarrollar un sistema de evaluación integrado",
           "Garantizar la compatibilidad multiplataforma"
         ],
-        image: "./img/portfolio/progra3.jpeg",
-        colors: [
-          { name: "#faf5f5", value: "#faf5f5" },
-          { name: "#58baf3", value: "#58baf3" },
-        ],
-        components: [
-          "Panel de progreso - Para seguimiento"
-        ]
+        image: "./img/portfolio/snbx2.png",
+        img1: "./img/portfolio/snbx21.png",
       }
       ,
-      "mariaaux": {
-        title: "Agua a tu Alcance",
-        year: "2023",
-        type: "Proyecto Educativo",
-        software: "Android Studio, Balsamiq ",
-        objective: "Una app-mobile para gestionar el consumo de agua",
-        description: "Desarrollo de una plataforma interactiva  la cual nos decía cada cuanto teníamos que tomar agua",
-        role: "Diseñadora principal ",
-        languages: "Java",
+      "tradeo": {
+        title: "Tradeo",
         objectives: [
           "Crear contenido científico accesible y atractivo para estudiantes",
           "Implementar simulaciones interactivas de procesos naturales",
           "Desarrollar un sistema de evaluación integrado",
           "Garantizar la compatibilidad multiplataforma"
         ],
-        image: "./img/portfolio/progra3.jpeg",
-        colors: [
-          { name: "#faf5f5", value: "#faf5f5" },
-          { name: "#58baf3", value: "#58baf3" },
-        ],
-        components: [
-          "Panel de progreso - Para seguimiento"
-        ]
+        image: "./img/portfolio/tradeo.png",
+        img1: "./img/portfolio/tradeo2.png",
+        
       }
     };
 
@@ -366,32 +266,12 @@
         // Generar contenido del proyecto
         const projectContent = document.getElementById('project-content');
         projectContent.innerHTML = `
-          <div class="project-header text-center">
-            <h1>${project.year}</h1>
-           
-          </div>
+    
+
+          
 
           <div class="row">
             <div class="col-md-8">
-              <div class="project-details">
-                <h3>Tipo de proyecto</h3>
-                <p>${project.type}</p>
-
-                <h3>Software Utilizado</h3>
-                <p>${project.software}</p>
-
-                <h3>Objetivo del Proyecto</h3>
-                <p>${project.objective}</p>
-
-                <h3>Descripción General del Proceso de Trabajo</h3>
-                <p>${project.description}</p>
-
-                <h3>Rol y Responsabilidades en el Proyecto</h3>
-                <p>${project.role}</p>
-
-                <h3>Lenguajes de Programación Utilizados</h3>
-                <p>${project.languages}</p>
-              </div>
 
               <div class="project-section">
                 <h3>Objetivos del Proyecto</h3>
@@ -401,27 +281,21 @@
               </div>
             </div>
 
-            <div class="col-md-4">
-              <img src="${project.image}" alt="${project.title}" class="project-image">
-              
-              <div class="project-section">
-                <h3>PALETA DE COLORES</h3>
-                <p>La paleta de colores ha sido seleccionada para crear un entorno visual atractivo.</p>
-                <div class="color-palette">
-                  ${project.colors.map(color => `
-                    <div class="color-box" style="background-color: ${color.value}">
-                      <span>${color.name}</span>
-                    </div>
-                  `).join('')}
-                </div>
-              </div>
+           <div class="row mt-3 project-image">
 
-              <div class="project-section">
-                <h3>COMPONENTES UTILIZADOS</h3>
-                <ul class="component-list">
-                  ${project.components.map(component => `<li>${component}</li>`).join('')}
-                </ul>
-              </div>
+             <div class="col-md-4">
+               <img src="${project.img1}" alt="${project.title}" class="project-image">
+             </div>
+
+             <div class="col-md-4">
+               <img src="${project.image}" alt="${project.title}" class="project-image">
+             </div>
+               
+           </div>
+           <div>
+            <a class="btn btn-primary" href="portfolio.html" > Atrás</a>
+            </div>
+            
             </div>
           </div>
         `;
